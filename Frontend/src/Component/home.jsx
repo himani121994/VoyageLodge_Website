@@ -27,7 +27,7 @@ const Home = () => {
 
 
         <section>
-            <div className="row" style={{ display: "flex",marginRight: "auto",marginLeft: "auto",position:"relative" }}>
+            <div className="row" style={{ display: "flex",marginRight: "auto",marginLeft: "auto",position:"relative",margin:"80px" }}>
                 <div className="col-md">
                     <div style={{ position: "relative", top: "0px", left: "275px" }}>
                         <img src={img1} alt="" style={{ height: "350px", width: "400px", borderRadius: "40px", top: "30px" }} />
