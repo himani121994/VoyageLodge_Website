@@ -1,4 +1,5 @@
 const RoomModel = require("../Models/Room.model");
+const cloud = require("../Cloudinary")
 
 //=======Room Upload Method========
 const UploadRoom = async(req,res)=>{
