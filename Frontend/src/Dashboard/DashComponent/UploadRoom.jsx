@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import ".././DashAsssets/css/uploadroom.css";
 import axios from "axios";
 
-const UploadRoom = (e) => {
+const UploadRoom = () => {
   const [roomDetails, setRoomDetails] = useState({
     roomtype: "",
     location: "",
@@ -31,7 +31,7 @@ const UploadRoom = (e) => {
     for (let i = 0; i < roomImages.length; i++) {
       formData.append('roomImages', roomImages[i]);
     }
-    // console.log(...formData);
+    console.log(...formData);
     let url = "http://localhost:8000/dashboard/uploadroom";
     axios.post(url, formData, {
       headers: {
@@ -71,8 +71,8 @@ const UploadRoom = (e) => {
         />
         Non-AC
 
-        <label htmlFor="images">Room Images</label>
-        <input id="images" type="file" multiple onChange={handleRoomImages} />
+        <label htmlFor="roomImages">Room Images</label>
+        <input id="roomImages" type="file" multiple onChange={handleRoomImages} />
 
         <button type="submit" style={{ margin: "30px" }}>Submit</button>
       </form>
