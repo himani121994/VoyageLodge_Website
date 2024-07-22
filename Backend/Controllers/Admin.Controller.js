@@ -1,6 +1,9 @@
 const RoomModel = require("../Models/Room.model");
-const { cloudinary, storage } = require('../Cloudinary');
+const VehicleModel = require("../Models/Vehicle.model")
+const { cloudinary, storage,storageVehicle } = require('../Cloudinary');
 const multer = require('multer');
+
+
 const upload = multer({ storage: storage }).array('roomImages', 10);
 
 //=======Room Upload Method========
@@ -22,7 +25,28 @@ const UploadRoom = async (req, res) => {
     }
   });
 }
+// ============Vehicle Images================
+const uploadVehicle = multer({ storage: storageVehicle }).array('vehicleImages', 10);
+
+const UploadVehicle = async (req, res) => {
+  uploadVehicle(req, res, async (err) => {
+    if (err) {
+      console.error("Error uploading vehicle files: ", err);
+      return res.status(500).send("Error uploading vehicle files: " + err.message);
+    }
+    try {
+      const { price, brand, vehicletype } = req.body;
+      const imgUrls = req.files.map(file => file.path);
+      const vehicle = new VehicleModel({ price, brand, vehicletype, images: imgUrls, defaultImage: imgUrls[0] });
+      const savevehicle = await vehicle.save();
+      res.status(201).json(savevehicle);
+    } catch (error) {
+      console.error("Error saving data vehicle: ", error);
+      res.status(500).send("Error saving data vehicle: " + error.message);
+    }
+  });
+};
 
 module.exports = {
-  UploadRoom
+  UploadRoom,UploadVehicle
 }
