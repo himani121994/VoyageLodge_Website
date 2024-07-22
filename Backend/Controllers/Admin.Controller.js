@@ -46,7 +46,12 @@ const UploadVehicle = async (req, res) => {
     }
   });
 };
+// ===========Display All Room============
+const Allrooms =async(req,res)=>{
+    let rooms = await RoomModel.find();
+    res.status(200).json(rooms);
+}
 
 module.exports = {
-  UploadRoom,UploadVehicle
+  UploadRoom,UploadVehicle,Allrooms
 }

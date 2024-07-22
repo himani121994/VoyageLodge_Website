@@ -25,7 +25,7 @@ mynav("/home")
             <hr style={{marginTop:"20px"}}/>
             <Link className="desh-link" to="uploadroom">uploadRoom</Link>
             <Link className="desh-link" to="uploadvehicle">Upload Vehicle</Link>
-            <Link className="desh-link" to="alltech" >All Technology</Link>
+            <Link className="desh-link" to="allrooms">All Rooms</Link>
             
           </div>
         </aside>
