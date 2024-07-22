@@ -4,6 +4,7 @@ import Layout from './Layout';
 import Home from './Component/home';
 import AdminHome from './Dashboard/DashLayout/TopNav';
 import UploadRoom from "./Dashboard/DashComponent/UploadRoom";
+import UploadVehicle from './Dashboard/DashComponent/UploadVehicle';
 
 const App =()=>{
   return(
@@ -15,6 +16,7 @@ const App =()=>{
 
      <Route path='/admin' element={<AdminHome />}>
       <Route path='uploadroom' element={<UploadRoom />}/> 
+      <Route path='uploadvehicle' element={<UploadVehicle/>}/>
      </Route>
     </Routes>
     </BrowserRouter>

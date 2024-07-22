@@ -15,10 +15,20 @@ const storage = new CloudinaryStorage({
     public_id: (req, file) => Date.now() + '-' + file.originalname,
   },
 });
+const storageVehicle = new CloudinaryStorage({
+  cloudinary: cloudinary,
+  params: {
+    folder: 'VoyageLodge_imagesVehicle',
+    format: async (req, file) => 'jpg',
+    public_id: (req, file) => Date.now() + '-' + file.originalname,
+  },
+});
 
 module.exports = {
   cloudinary,
   storage,
+  storageVehicle
+  
 };
 
 
