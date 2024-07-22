@@ -5,6 +5,7 @@ import Home from './Component/home';
 import AdminHome from './Dashboard/DashLayout/TopNav';
 import UploadRoom from "./Dashboard/DashComponent/UploadRoom";
 import UploadVehicle from './Dashboard/DashComponent/UploadVehicle';
+import AllRooms from './Dashboard/DashComponent/AllRooms';
 
 const App =()=>{
   return(
@@ -17,6 +18,7 @@ const App =()=>{
      <Route path='/admin' element={<AdminHome />}>
       <Route path='uploadroom' element={<UploadRoom />}/> 
       <Route path='uploadvehicle' element={<UploadVehicle/>}/>
+      <Route path='allrooms' element={<AllRooms/>}/>
      </Route>
     </Routes>
     </BrowserRouter>
