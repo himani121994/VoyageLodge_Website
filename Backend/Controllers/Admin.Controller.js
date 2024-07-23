@@ -55,6 +55,7 @@ const Allrooms =async(req,res)=>{
 const AllVehicle  = async(req,res)=>{
   let vehicle =  await VehicleModel.find();
   res.status(200).json(vehicle);
+  
 }
 
 const DeleteeVhicle = async(req,res)=>{
