@@ -57,6 +57,15 @@ const AllVehicle  = async(req,res)=>{
   res.status(200).json(vehicle);
 }
 
+const DeleteeVhicle = async(req,res)=>{
+  let id = req.body.id;
+  console.log(id);
+  let vehicle =  await VehicleModel.findByIdAndDelete(id).then((data)=>{
+    res.json("delete succesfully")
+    
+  })
+}
+
 module.exports = {
-  UploadRoom,UploadVehicle,Allrooms,AllVehicle
+  UploadRoom,UploadVehicle,Allrooms,AllVehicle,DeleteeVhicle
 }
