@@ -5,4 +5,5 @@ const router = express.Router();
 router.post('/uploadroom', adminController.UploadRoom);
 router.post('/uploadvehicle',adminController.UploadVehicle);
 router.get('/allrooms', adminController.Allrooms)
+router.get('/allvehicle',adminController.AllVehicle)
 module.exports = router;

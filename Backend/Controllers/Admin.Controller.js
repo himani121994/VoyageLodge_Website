@@ -52,6 +52,11 @@ const Allrooms =async(req,res)=>{
     res.status(200).json(rooms);
 }
 
+const AllVehicle  = async(req,res)=>{
+  let vehicle =  await VehicleModel.find();
+  res.status(200).json(vehicle);
+}
+
 module.exports = {
-  UploadRoom,UploadVehicle,Allrooms
+  UploadRoom,UploadVehicle,Allrooms,AllVehicle
 }
