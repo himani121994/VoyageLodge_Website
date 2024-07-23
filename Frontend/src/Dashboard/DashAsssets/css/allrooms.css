@@ -1,0 +1,15 @@
+.main-div{
+    margin-left: 250px;
+    margin-top: 100px;
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 80%;
+}
+.imagesarray{
+    width: 100px;
+}
+.image-td{
+    display: flex;
+}

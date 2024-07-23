@@ -26,6 +26,7 @@ mynav("/home")
             <Link className="desh-link" to="uploadroom">uploadRoom</Link>
             <Link className="desh-link" to="uploadvehicle">Upload Vehicle</Link>
             <Link className="desh-link" to="allrooms">All Rooms</Link>
+            <Link className="desh-link" to="allvehicle">All Vehicle</Link>
             
           </div>
         </aside>
