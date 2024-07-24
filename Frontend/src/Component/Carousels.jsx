@@ -1,25 +1,27 @@
 import Carousel from 'react-bootstrap/Carousel';
-import ExampleCarouselImage from 'components/ExampleCarouselImage';
-
-function Carousel() {
+// import ExampleCarouselImage from 'components/ExampleCarouselImage';
+import bgimg from "../assets/img/bg_1.jpg.webp"
+function Carouselslid() {
   return (
     <Carousel fade>
-      <Carousel.Item>
-        <ExampleCarouselImage text="First slide" />
+       <Carousel.Item>
+        {/*<ExampleCarouselImage text="First slide" /> */}
+        <img src={bgimg} alt="" />
         <Carousel.Caption>
+        
           <h3>First slide label</h3>
           <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
-        <ExampleCarouselImage text="Second slide" />
+        {/* <ExampleCarouselImage text="Second slide" /> */}
         <Carousel.Caption>
           <h3>Second slide label</h3>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
-        <ExampleCarouselImage text="Third slide" />
+        {/* <ExampleCarouselImage text="Third slide" /> */}
         <Carousel.Caption>
           <h3>Third slide label</h3>
           <p>
@@ -31,4 +33,4 @@ function Carousel() {
   );
 }
 
-export default Carousel;
+export default Carouselslid;
