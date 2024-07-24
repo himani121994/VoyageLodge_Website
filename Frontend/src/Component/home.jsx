@@ -1,4 +1,5 @@
 import "../assets/css/home.css";
+import Carouselslid from "./Carousels";
 // import img1 from "../assets/img/home-box-1.webp";
 import arrow from "../assets/img/arrowline.webp";
 import img1 from "../assets/img/home-midimg-1.webp";
@@ -25,8 +26,9 @@ const Home = () => {
         //         </div>
         //     </section>
 
-
+         
         <section>
+           
             <div className="row" style={{ display: "flex",marginRight: "auto",marginLeft: "auto",position:"relative",margin:"80px" }}>
                 <div className="col-md">
                     <div style={{ position: "relative", top: "0px", left: "275px" }}>
@@ -34,7 +36,7 @@ const Home = () => {
                         <img src={arrow} alt="" />
                         
                     </div>
-                   
+                    
                     <div style={{ position: "absolute", zIndex: "-1",top: "138px" }}>
                         <img src={img2} alt="" style={{ width: "500px", borderRadius: "40px" }} />
                         
@@ -46,6 +48,7 @@ const Home = () => {
                     <p style={{fontSize:"26px",color:"#2f4f4f"}}>Choose from over 210,000 online video courses with new Additions published every month</p>
                 </div>
             </div>
+            <Carouselslid/>
         </section>
     )
 }
