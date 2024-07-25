@@ -4,3 +4,39 @@
     height: 100%;
     
 }
+
+.header {
+    background: #f3f4f7;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header h1 {
+    color: black;
+    text-align: center;
+    padding-top: 50px;
+}
+
+.content {
+    padding: 20px;
+}
+
+.row {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.room-image {
+    width: 400px;
+    height: 400px;
+}
+
+.description {
+    width: 400px;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

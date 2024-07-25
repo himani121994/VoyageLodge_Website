@@ -1,4 +1,4 @@
-import "../assets/css/home.css";
+import "../assets/css/home.css"
 import Carouselslid from "./Carousels";
 import room1 from "../assets/img/room-1.jpg.webp";
 import arrow from "../assets/img/arrowline.webp";
@@ -51,32 +51,29 @@ const Home = () => {
             <Carouselslid />
 
             <div>
-                <div style={{background:"#f3f4f7",height:"200px" }}>
-                    <h1 style={{color:"black",textAlign:"center",paddingTop:"50px"}}>Apartment Room</h1>
+                <div class="header">
+                    <h1>Apartment Room</h1>
                 </div>
-                <div >
-                    <div style={{display:"flex"}}>
-                       <img src={room1} alt="" style={{width:"400px",height:"400px"}}/>
-                       <div style={{width:"400px",height:"400px"}}>
-                        <p>hellow</p>
-                       </div>
-                       <img src={room1} alt="" style={{width:"400px",height:"400px"}}/>
-                       <div style={{width:"400px",height:"400px"}}>
-                        <p>hellow</p>
-                       </div>
+                <div class="content">
+                    <div class="row">
+                        <img src={room1} alt="Room Image" class="room-image" />
+                        <div class="description">
+                            <p>Hello</p>
+                        </div>
+                        <img src={room1} alt="Room Image" class="room-image" />
+                        <div class="description">
+                            <p>Hello</p>
+                        </div>
                     </div>
-                    <div>
-                    <div style={{display:"flex"}}>
-                    <div style={{width:"400px",height:"400px"}}>
-                        <p>hellow</p>
-                       </div>
-                       <img src={room1} alt="" style={{width:"400px",height:"400px"}}/>
-                       <div style={{width:"400px",height:"400px"}}>
-                        <p>hellow</p>
-                       </div>
-                       <img src={room1} alt="" style={{width:"400px",height:"400px"}}/>
-                       
-                    </div>
+                    <div class="row">
+                        <div class="description">
+                            <p>Hello</p>
+                        </div>
+                        <img src={room1} alt="Room Image" class="room-image" />
+                        <div class="description">
+                            <p>Hello</p>
+                        </div>
+                        <img src={room1} alt="Room Image" class="room-image" />
                     </div>
                 </div>
             </div>
