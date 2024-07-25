@@ -51,27 +51,30 @@ const Home = () => {
             <Carouselslid />
 
             <div>
+                <div style={{background:"#f3f4f7",height:"200px"}}>
+                    <h1 style={{color:"black",textAlign:"center",paddingTop:"50px"}}>Apartment Room</h1>
+                </div>
                 <div >
                     <div style={{display:"flex"}}>
-                       <img src={room1} alt="" style={{width:"200px",height:"200px"}}/>
-                       <div style={{width:"200px",height:"200px"}}>
+                       <img src={room1} alt="" style={{width:"400px",height:"400px"}}/>
+                       <div style={{width:"400px",height:"400px"}}>
                         <p>hellow</p>
                        </div>
-                       <img src={room1} alt="" style={{width:"200px",height:"200px"}}/>
-                       <div style={{width:"200px",height:"200px"}}>
+                       <img src={room1} alt="" style={{width:"400px",height:"400px"}}/>
+                       <div style={{width:"400px",height:"400px"}}>
                         <p>hellow</p>
                        </div>
                     </div>
                     <div>
                     <div style={{display:"flex"}}>
-                    <div style={{width:"200px",height:"200px"}}>
+                    <div style={{width:"400px",height:"400px"}}>
                         <p>hellow</p>
                        </div>
-                       <img src={room1} alt="" style={{width:"200px",height:"200px"}}/>
-                       <div style={{width:"200px",height:"200px"}}>
+                       <img src={room1} alt="" style={{width:"400px",height:"400px"}}/>
+                       <div style={{width:"400px",height:"400px"}}>
                         <p>hellow</p>
                        </div>
-                       <img src={room1} alt="" style={{width:"200px",height:"200px"}}/>
+                       <img src={room1} alt="" style={{width:"400px",height:"400px"}}/>
                        
                     </div>
                     </div>
