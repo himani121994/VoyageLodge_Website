@@ -51,7 +51,7 @@ const Home = () => {
             <Carouselslid />
 
             <div>
-                <div style={{background:"#f3f4f7",height:"200px"}}>
+                <div style={{background:"#f3f4f7",height:"200px" }}>
                     <h1 style={{color:"black",textAlign:"center",paddingTop:"50px"}}>Apartment Room</h1>
                 </div>
                 <div >
