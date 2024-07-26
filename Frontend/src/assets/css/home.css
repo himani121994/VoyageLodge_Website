@@ -89,3 +89,19 @@
     align-items: center;
     justify-content: center;
 }
+.last-secction h1{
+    color: black;
+    text-align: center;
+    
+}
+.last-secction{
+    background: #f3f4f7;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.row-last-blog{
+    display: flex;
+    justify-content: space-around;
+}

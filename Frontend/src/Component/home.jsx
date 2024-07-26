@@ -1,9 +1,11 @@
 import "../assets/css/home.css";
 import Carouselslid from "./Carousels";
 import room1 from "../assets/img/room-1.jpg.webp";
-import arrow from "../assets/img/arrowline.webp";
-import img1 from "../assets/img/home-midimg-1.webp";
-import img2 from "../assets/img/home-midimg-2.webp";
+// import arrow from "../assets/img/arrowline.webp";
+// import img1 from "../assets/img/home-midimg-1.webp";
+// import img2 from "../assets/img/home-midimg-2.webp";
+import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
 
 const Home = () => {
     return (
@@ -52,6 +54,46 @@ const Home = () => {
                     </div>
                 </div>
             </div>
+            <section style={{margin:"70px 0px"}}>
+                <div className="last-secction">
+                    <h1>Latest news from our blog</h1>
+                </div>
+                <div className="row-last-blog">
+                    <Card style={{ width: '28rem', }}>
+                        <Card.Img variant="top" src={room1} />
+                        <Card.Body>
+                            <Card.Title>Card Title</Card.Title>
+                            <Card.Text>
+                                Some quick example text to build on the card title and make up the
+                                bulk of the card's content.
+                            </Card.Text>
+                            <Button variant="primary">Go somewhere</Button>
+                        </Card.Body>
+                    </Card>
+                    <Card style={{ width: '28rem' }}>
+                        <Card.Img variant="top" src={room1} />
+                        <Card.Body>
+                            <Card.Title>Card Title</Card.Title>
+                            <Card.Text>
+                                Some quick example text to build on the card title and make up the
+                                bulk of the card's content.
+                            </Card.Text>
+                            <Button variant="primary">Go somewhere</Button>
+                        </Card.Body>
+                    </Card>
+                    <Card style={{ width: '28rem' }}>
+                        <Card.Img variant="top" src={room1} />
+                        <Card.Body>
+                            <Card.Title>Card Title</Card.Title>
+                            <Card.Text>
+                                Some quick example text to build on the card title and make up the
+                                bulk of the card's content.
+                            </Card.Text>
+                            <Button variant="primary">Go somewhere</Button>
+                        </Card.Body>
+                    </Card>
+                </div>
+            </section>
         </section>
     );
 };
