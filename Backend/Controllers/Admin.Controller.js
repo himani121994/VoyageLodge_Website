@@ -4,6 +4,11 @@ const { cloudinary, storage,storageVehicle } = require('../Cloudinary');
 const multer = require('multer');
 
 
+const Carousels =(req,res)=>{
+
+}
+
+
 const upload = multer({ storage: storage }).array('roomImages', 10);
 
 //=======Room Upload Method========
@@ -68,5 +73,5 @@ const DeleteeVhicle = async(req,res)=>{
 }
 
 module.exports = {
-  UploadRoom,UploadVehicle,Allrooms,AllVehicle,DeleteeVhicle
+  UploadRoom,UploadVehicle,Allrooms,AllVehicle,DeleteeVhicle,Carousels
 }
