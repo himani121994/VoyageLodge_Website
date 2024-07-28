@@ -6,6 +6,7 @@ const { cloudinary, storage,storageVehicle } = require('../Cloudinary');
 const multer = require('multer');
 
 // add home carousels home img
+
 const Carousels =async(req,res)=>{
   try {
     let { hadding,description,image } = req.body;
