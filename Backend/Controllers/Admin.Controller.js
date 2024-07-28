@@ -1,23 +1,44 @@
 const RoomModel = require("../Models/Room.model");
 const VehicleModel = require("../Models/Vehicle.model");
 const HomeModel = require("../Models/Home.model");
-
 const { cloudinary, storage,storageVehicle } = require('../Cloudinary');
 const multer = require('multer');
+const fs = require('fs');
+const path = require('path');
 
-// add home carousels home img
 
-const Carousels =async(req,res)=>{
+const UPLOADS_DIR = path.join(__dirname, '..', 'uploads');
+
+if (!fs.existsSync(UPLOADS_DIR)) {
+  fs.mkdirSync(UPLOADS_DIR);
+}
+
+// Multer setup for file upload
+const storagehome = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, UPLOADS_DIR);
+  },
+  filename: (req, file, cb) => {
+    cb(null, Date.now() + '-' + file.originalname);
+  },
+});
+
+const uploadHome = multer({ storage: storagehome });
+
+const addCarousel = async (req, res) => {
   try {
-    let { hadding,description,image } = req.body;
-    const home = new HomeModel({ hadding, location, description, img: image });
+    let { hadding, description } = req.body;
+    let image = req.file ? req.file.path : null;
+    console.log(hadding, description, image);
+    const home = new CarouselsModel({ hadding, description, img: image });
     const savehome = await home.save();
     res.status(201).json(savehome);
   } catch (error) {
     console.error("Error saving data: ", error);
     res.status(500).send("Error saving data: " + error.message);
   }
-}
+};
+
 
 
 const upload = multer({ storage: storage }).array('roomImages', 10);
@@ -84,5 +105,5 @@ const DeleteeVhicle = async(req,res)=>{
 }
 
 module.exports = {
-  UploadRoom,UploadVehicle,Allrooms,AllVehicle,DeleteeVhicle,Carousels
+  UploadRoom,UploadVehicle,Allrooms,AllVehicle,DeleteeVhicle,addCarousel,uploadHome
 }
