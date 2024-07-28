@@ -1,11 +1,22 @@
 const RoomModel = require("../Models/Room.model");
-const VehicleModel = require("../Models/Vehicle.model")
+const VehicleModel = require("../Models/Vehicle.model");
+const HomeModel = require("../Models/Home.model");
+
 const { cloudinary, storage,storageVehicle } = require('../Cloudinary');
 const multer = require('multer');
 
+// add home carousels home img
 
-const Carousels =(req,res)=>{
-
+const Carousels =async(req,res)=>{
+  try {
+    let { hadding,description,image } = req.body;
+    const home = new HomeModel({ hadding, location, description, img: image });
+    const savehome = await home.save();
+    res.status(201).json(savehome);
+  } catch (error) {
+    console.error("Error saving data: ", error);
+    res.status(500).send("Error saving data: " + error.message);
+  }
 }
 
 
