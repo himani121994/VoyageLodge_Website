@@ -28,7 +28,7 @@ const uploadHome = multer({ storage: storagehome });
 const addCarousel = async (req, res) => {
   try {
     let { hadding, description } = req.body;
-    let image = req.file ? req.file.path : null;
+    let image = req.file ? req.file.path.replace('C:\\Intership Project\\VoyageLodge_Website\\Backend\\uploads\\', '') : null; // Remove the absolute path part
     console.log(hadding, description, image);
     const home = new HomeModel({ hadding, description, img: image });
     const savehome = await home.save();
@@ -38,7 +38,6 @@ const addCarousel = async (req, res) => {
     res.status(500).send("Error saving data: " + error.message);
   }
 };
-
 
 
 
