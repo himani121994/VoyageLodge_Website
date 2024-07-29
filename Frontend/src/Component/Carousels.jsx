@@ -23,7 +23,7 @@ function Carouselslid() {
     <Carousel fade>
       {carousel.map((image, index) => (
         <Carousel.Item key={index}>
-          <img src={`http://localhost:8000/home/${image.img}`} alt={image.hadding} />
+          <img src={`http://localhost:8000/uploads/${image.img}`} style={{width:"100%",height:"650px"}} alt={image.hadding} />
           <Carousel.Caption>
             <h3>{image.hadding}</h3>
             <p>{image.description}</p>
