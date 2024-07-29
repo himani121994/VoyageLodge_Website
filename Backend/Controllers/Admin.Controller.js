@@ -41,9 +41,10 @@ const addCarousel = async (req, res) => {
 
 
 
-const upload = multer({ storage: storage }).array('roomImages', 10);
+
 
 //=======Room Upload Method========
+const upload = multer({ storage: storage }).array('roomImages', 10);
 const UploadRoom = async (req, res) => {
   upload(req, res, async (err) => {
     if (err) {
