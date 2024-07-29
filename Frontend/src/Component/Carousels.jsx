@@ -1,34 +1,35 @@
 import Carousel from 'react-bootstrap/Carousel';
-// import ExampleCarouselImage from 'components/ExampleCarouselImage';
-import bgimg from "../assets/img/bg_1.jpg.webp"
+import { useState, useEffect } from 'react';
+import axios from 'axios';
+
 function Carouselslid() {
+  const [carousel, setCarousel] = useState([]);
+
+  useEffect(() => {
+    const loadCarouselData = async () => {
+      try {
+        let url = "http://localhost:8000/home/getcarouselsimg";
+        const response = await axios.get(url);
+        setCarousel(response.data);
+      } catch (error) {
+        console.error("Error fetching carousel data", error);
+      }
+    };
+
+    loadCarouselData();
+  }, []);
+
   return (
     <Carousel fade>
-       <Carousel.Item>
-        {/*<ExampleCarouselImage text="First slide" /> */}
-        <img src={bgimg} alt="" />
-        <Carousel.Caption>
-        
-          <h3>First slide label</h3>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-        </Carousel.Caption>
-      </Carousel.Item>
-      <Carousel.Item>
-        {/* <ExampleCarouselImage text="Second slide" /> */}
-        <Carousel.Caption>
-          <h3>Second slide label</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        </Carousel.Caption>
-      </Carousel.Item>
-      <Carousel.Item>
-        {/* <ExampleCarouselImage text="Third slide" /> */}
-        <Carousel.Caption>
-          <h3>Third slide label</h3>
-          <p>
-            Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-          </p>
-        </Carousel.Caption>
-      </Carousel.Item>
+      {carousel.map((image, index) => (
+        <Carousel.Item key={index}>
+          <img src={`http://localhost:8000/home/${image.img}`} alt={image.hadding} />
+          <Carousel.Caption>
+            <h3>{image.hadding}</h3>
+            <p>{image.description}</p>
+          </Carousel.Caption>
+        </Carousel.Item>
+      ))}
     </Carousel>
   );
 }

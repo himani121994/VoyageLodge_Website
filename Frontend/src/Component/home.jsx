@@ -1,9 +1,9 @@
 import "../assets/css/home.css";
 import Carouselslid from "./Carousels";
 import room1 from "../assets/img/room-1.jpg.webp";
-// import arrow from "../assets/img/arrowline.webp";
-// import img1 from "../assets/img/home-midimg-1.webp";
-// import img2 from "../assets/img/home-midimg-2.webp";
+import Carousel from 'react-bootstrap/Carousel';
+import { useState, useEffect } from 'react';
+import axios from 'axios';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 
