@@ -30,7 +30,7 @@ const addCarousel = async (req, res) => {
     let { hadding, description } = req.body;
     let image = req.file ? req.file.path : null;
     console.log(hadding, description, image);
-    const home = new CarouselsModel({ hadding, description, img: image });
+    const home = new HomeModel({ hadding, description, img: image });
     const savehome = await home.save();
     res.status(201).json(savehome);
   } catch (error) {
