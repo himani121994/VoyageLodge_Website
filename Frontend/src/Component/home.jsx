@@ -24,25 +24,47 @@ const Home = () => {
         for (let i = 0; i < rooms.length; i += 2) {
             rows.push(
                 <div className="rowmain" key={i}>
-                    <div className="room-item">
-                        <img src={rooms[i].defaultImage} alt="Room" className="room-image" />
-                        <div className="description">
-                            <p>{rooms[i].roomtype}</p>
-                        </div>
-                    </div>
-                    {rooms[i + 1] && (
-                        <div className="room-item">
-                            <img src={rooms[i + 1].defaultImage} alt="Room" className="room-image" />
-                            <div className="description">
-                                <p>{rooms[i + 1].roomtype}</p>
+                    {i % 4 === 0 ? (
+                        <>
+                            <div className="room-item">
+                                <img src={rooms[i].defaultImage} alt="Room" className="room-image" />
+                                <div className="description">
+                                    <p>{rooms[i].roomtype}</p>
+                                </div>
                             </div>
-                        </div>
+                            {rooms[i + 1] && (
+                                <div className="room-item">
+                                    <img src={rooms[i + 1].defaultImage} alt="Room" className="room-image" />
+                                    <div className="description">
+                                        <p>{rooms[i + 1].roomtype}</p>
+                                    </div>
+                                </div>
+                            )}
+                        </>
+                    ) : (
+                        <>
+                            <div className="room-item">
+                                <div className="description">
+                                    <p>{rooms[i].roomtype}</p>
+                                </div>
+                                <img src={rooms[i].defaultImage} alt="Room" className="room-image" />
+                            </div>
+                            {rooms[i + 1] && (
+                                <div className="room-item">
+                                    <div className="description">
+                                        <p>{rooms[i + 1].roomtype}</p>
+                                    </div>
+                                    <img src={rooms[i + 1].defaultImage} alt="Room" className="room-image" />
+                                </div>
+                            )}
+                        </>
                     )}
                 </div>
             );
         }
         return rows;
     }
+
     return (
         <section>
             <Carouselslid />
