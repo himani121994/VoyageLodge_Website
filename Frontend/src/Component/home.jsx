@@ -8,53 +8,54 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 
 const Home = () => {
+    const [rooms, setRoom] = useState([]);
+
+    const loadRoom = () => {
+        let url = "http://localhost:8000/home/room";
+        axios.get(url).then((res) => { setRoom(res.data.slice(0, 4)) });
+    }
+
+    useEffect(() => {
+        loadRoom()
+    }, [])
+
+    const renderRooms = () => {
+        const rows = [];
+        for (let i = 0; i < rooms.length; i += 2) {
+            rows.push(
+                <div className="rowmain" key={i}>
+                    <div className="room-item">
+                        <img src={rooms[i].defaultImage} alt="Room" className="room-image" />
+                        <div className="description">
+                            <p>{rooms[i].roomtype}</p>
+                        </div>
+                    </div>
+                    {rooms[i + 1] && (
+                        <div className="room-item">
+                            <img src={rooms[i + 1].defaultImage} alt="Room" className="room-image" />
+                            <div className="description">
+                                <p>{rooms[i + 1].roomtype}</p>
+                            </div>
+                        </div>
+                    )}
+                </div>
+            );
+        }
+        return rows;
+    }
     return (
         <section>
-            {/* <div className="row main-content">
-                <div className="col-md img-column">
-                    <div className="img-container">
-                        <img src={img1} alt="Mid Image 1" className="main-img" />
-                        <img src={arrow} alt="Arrow" className="arrow-img" />
-                    </div>
-                    <div className="img-background">
-                        <img src={img2} alt="Mid Image 2" className="background-img" />
-                    </div>
-                </div>
-                <div className="col-md text-container">
-                    <h3 className="guarantee-text">Guaranteed & Certified</h3>
-                    <h1 className="main-heading">The World's Best Online Education Institute</h1>
-                    <p className="main-description">Choose from over 210,000 online video courses with new additions published every month.</p>
-                </div>
-            </div> */}
             <Carouselslid />
             <div className="apartment-section">
                 <div className="header">
                     <h1>Apartment Room</h1>
                 </div>
                 <div className="content">
-                    <div className="rowmain">
-                        <img src={room1} alt="Room" className="room-image" />
-                        <div className="description">
-                            <p>Hello</p>
-                        </div>
-                        <img src={room1} alt="Room" className="room-image" />
-                        <div className="description">
-                            <p>Hello</p>
-                        </div>
-                    </div>
-                    <div className="rowmain">
-                        <div className="description">
-                            <p>Hello</p>
-                        </div>
-                        <img src={room1} alt="Room" className="room-image" />
-                        <div className="description">
-                            <p>Hello</p>
-                        </div>
-                        <img src={room1} alt="Room" className="room-image" />
-                    </div>
+                    {renderRooms()}
                 </div>
+                
             </div>
-            <section style={{margin:"70px 0px"}}>
+            <section style={{ margin: "70px 0px" }}>
                 <div className="last-secction">
                     <h1>Latest news from our blog</h1>
                 </div>
@@ -94,14 +95,14 @@ const Home = () => {
                     </Card>
                 </div>
             </section>
-            <section style={{margin:"70px 20px", backgroundColor:"#f3f4f7"}}>
+            <section style={{ margin: "70px 20px", backgroundColor: "#f3f4f7" }}>
                 <div className="last-secction">
                     <h1>Latest news from our blog</h1>
                 </div>
-                <div className="row-last-blog" style={{paddingBottom:"100px"}}>
-                   
+                <div className="row-last-blog" style={{ paddingBottom: "100px" }}>
+
                     <Card style={{ width: '28rem', display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
-                        <Card.Img variant="top" src={room1} style={{width:"100px",height:"100px",borderRadius:"50%"}} />
+                        <Card.Img variant="top" src={room1} style={{ width: "100px", height: "100px", borderRadius: "50%" }} />
                         <Card.Body>
                             <Card.Title>Card Title</Card.Title>
                             <Card.Text>
@@ -111,8 +112,8 @@ const Home = () => {
                             <Button variant="primary">Go somewhere</Button>
                         </Card.Body>
                     </Card>
-                    <Card style={{  width: '28rem', display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
-                        <Card.Img variant="top" src={room1} style={{width:"100px",height:"100px",borderRadius:"50%"}}/>
+                    <Card style={{ width: '28rem', display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
+                        <Card.Img variant="top" src={room1} style={{ width: "100px", height: "100px", borderRadius: "50%" }} />
                         <Card.Body>
                             <Card.Title>Card Title</Card.Title>
                             <Card.Text>
@@ -122,8 +123,8 @@ const Home = () => {
                             <Button variant="primary">Go somewhere</Button>
                         </Card.Body>
                     </Card>
-                    <Card style={{  width: '28rem', display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
-                        <Card.Img variant="top" src={room1} style={{width:"100px",height:"100px",borderRadius:"50%"}}/>
+                    <Card style={{ width: '28rem', display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
+                        <Card.Img variant="top" src={room1} style={{ width: "100px", height: "100px", borderRadius: "50%" }} />
                         <Card.Body>
                             <Card.Title>Card Title</Card.Title>
                             <Card.Text>
