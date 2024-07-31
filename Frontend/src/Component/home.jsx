@@ -141,7 +141,9 @@ const Home = () => {
             </div>
 
             <div className="">
-                <img src={room1} alt="" style={{position:"relative", zIndex:"-9"}}/>
+
+                <img src={room1} alt="" />
+
             </div>
 
             <section style={{ margin: "70px 0px" }}>
