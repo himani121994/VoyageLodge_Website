@@ -9,14 +9,20 @@ import Card from 'react-bootstrap/Card';
 
 const Home = () => {
     const [rooms, setRoom] = useState([]);
+    const [vehicles, setvehicle] = useState([]);
 
     const loadRoom = () => {
         let url = "http://localhost:8000/home/room";
         axios.get(url).then((res) => { setRoom(res.data.slice(0, 4)) });
     }
+    const loadVehicle = () => {
+        let url = "http://localhost:8000/home/vehicle";
+        axios.get(url).then((res) => { setvehicle(res.data.slice(0, 4)) });
+    }
 
     useEffect(() => {
-        loadRoom()
+        loadRoom(),
+        loadVehicle()
     }, [])
 
     const renderRooms = () => {
@@ -65,6 +71,52 @@ const Home = () => {
         return rows;
     }
 
+    const renderVehicle = () => {
+        const rows = [];
+        for (let i = 0; i < vehicles.length; i += 2) {
+            rows.push(
+                <div className="rowmain" key={i}>
+                    {i % 4 === 0 ? (
+                        <>
+                            <div className="room-item">
+                                <img src={vehicles[i].defaultImage} alt="vehicles" className="room-image" />
+                                <div className="description">
+                                    <p>{vehicles[i].vehicletype}</p>
+                                </div>
+                            </div>
+                            {rooms[i + 1] && (
+                                <div className="room-item">
+                                    <img src={vehicles[i + 1].defaultImage} alt="Room" className="room-image" />
+                                    <div className="description">
+                                        <p>{vehicles[i + 1].vehicletype}</p>
+                                    </div>
+                                </div>
+                            )}
+                        </>
+                    ) : (
+                        <>
+                            <div className="room-item">
+                                <div className="description">
+                                    <p>{vehicles[i].vehicletype}</p>
+                                </div>
+                                <img src={vehicles[i].defaultImage} alt="Room" className="room-image" />
+                            </div>
+                            {rooms[i + 1] && (
+                                <div className="room-item">
+                                    <div className="description">
+                                        <p>{vehicles[i + 1].vehicletype}</p>
+                                    </div>
+                                    <img src={vehicles[i + 1].defaultImage} alt="Room" className="room-image" />
+                                </div>
+                            )}
+                        </>
+                    )}
+                </div>
+            );
+        }
+        return rows;
+    }
+
     return (
         <section>
             <Carouselslid />
@@ -74,9 +126,19 @@ const Home = () => {
                 </div>
                 <div className="content">
                     {renderRooms()}
-                </div>
-                
+                </div>      
             </div>
+      {/* Vehicle display here */}
+
+      <div className="apartment-section">
+                <div className="header">
+                    <h1>Vehicle Room</h1>
+                </div>
+                <div className="content">
+                    {renderVehicle()}
+                </div>      
+            </div>
+
             <section style={{ margin: "70px 0px" }}>
                 <div className="last-secction">
                     <h1>Latest news from our blog</h1>
