@@ -1,6 +1,6 @@
 import "../assets/css/home.css";
 import Carouselslid from "./Carousels";
-import room1 from "../assets/img/room-1.jpg.webp";
+import room1 from "../assets/img/bg_1.jpg.webp";
 import Carousel from 'react-bootstrap/Carousel';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
@@ -22,7 +22,7 @@ const Home = () => {
 
     useEffect(() => {
         loadRoom(),
-        loadVehicle()
+            loadVehicle()
     }, [])
 
     const renderRooms = () => {
@@ -120,23 +120,30 @@ const Home = () => {
     return (
         <section>
             <Carouselslid />
+
             <div className="apartment-section">
                 <div className="header">
                     <h1>Apartment Room</h1>
                 </div>
                 <div className="content">
                     {renderRooms()}
-                </div>      
+                </div>
             </div>
-      {/* Vehicle display here */}
+            {/* Vehicle display here */}
 
-      <div className="apartment-section">
+            <div className="apartment-section">
                 <div className="header">
                     <h1>Vehicle Room</h1>
                 </div>
                 <div className="content">
                     {renderVehicle()}
-                </div>      
+                </div>
+            </div>
+
+            <div className="">
+
+                <img src={room1} alt="" />
+
             </div>
 
             <section style={{ margin: "70px 0px" }}>
