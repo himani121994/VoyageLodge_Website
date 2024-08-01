@@ -4,58 +4,19 @@
     height: 100%;
 }
 
-/* .main-content {
-    display: flex;
-    margin: 80px auto;
-    position: relative;
-} */
-
-/* .img-column .img-container {
-    position: relative;
-    top: 0;
-    left: 275px;
-} */
-
-/* .img-column .main-img {
-    height: 350px;
-    width: 400px;
-    border-radius: 40px;
-    top: 30px;
-} */
-
-/* .img-column .arrow-img {
-    /* Additional styling as needed 
-} */
-
-/* .img-background {
-    position: absolute;
-    z-index: -1;
-    top: 138px;
-} */
-
-/* .background-img {
-    width: 500px;
-    border-radius: 40px;
-} */
-
-/* .text-container {
-    margin-left: 300px;
-} */
-
-/* .guarantee-text {
-    color: green;
-    font-family: cursive;
-    font-size: xx-large;
-} */
-
-/* .main-heading {
-    font-size: 58px;
-} */
-
-/* .main-description {
-    font-size: 26px;
-    color: #2f4f4f;
-} */
+.background-section-rooms {
+    background-image: url('../img/bg_1.jpg.webp'); 
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    
+}
+.background-section-car{
+    background-image: url('../img/car_bg_1.jpg'); 
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
 
 .header {
     background: #f3f4f7;
@@ -72,28 +33,28 @@
 }
 
 .content {
-    padding: 20px;
+    /* padding: 20px; */
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    /* gap: 20px; */
 }
 
 .rowmain {
     display: flex;
     justify-content: space-between;
-    gap: 20px;
+    /* gap: 20px; */
 }
 
 .room-item {
     display: flex;
     /* flex-direction: column; */
     align-items: center;
-    width: 48%; 
+    width: 50%; 
 }
 
 .room-image {
-    width: 100%;
-    height: 300px; 
+    width: 60%;
+    height: 400px; 
 }
 
 .description {
@@ -101,8 +62,9 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 10px;
+    /* padding: 10px; */
     width: 100%;
+    height: 400px; 
 }
 
 
