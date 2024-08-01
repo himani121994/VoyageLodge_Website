@@ -8,6 +8,7 @@ import UploadVehicle from './Dashboard/DashComponent/UploadVehicle';
 import AllRooms from './Dashboard/DashComponent/AllRooms';
 import AllVehicle from './Dashboard/DashComponent/AllVehicle';
 import DashCarousels from './Dashboard/DashComponent/Carousels';
+import About from './Component/About';
 
 const App =()=>{
   return(
@@ -15,6 +16,7 @@ const App =()=>{
     <Routes>
      <Route path='/' element={<Layout />}>
      <Route path='/home' element={<Home />}/>
+     <Route path='/about' element={<About />}/>
      </Route>
 
      <Route path='/admin' element={<AdminHome />}>
