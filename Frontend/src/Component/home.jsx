@@ -121,17 +121,19 @@ const Home = () => {
         <section>
             <Carouselslid />
 
-            <div className="apartment-section">
-                <div className="header">
-                    <h1>Apartment Room</h1>
-                </div>
-                <div className="content">
-                    {renderRooms()}
+            <div className="background-section-rooms">
+                <div className="apartment-section" style={{ backgroundColor: "rgb(255, 179, 179,0.5)" }}>
+                    <div className="header">
+                        <h1>Apartment Room</h1>
+                    </div>
+                    <div className="content">
+                        {renderRooms()}
+                    </div>
                 </div>
             </div>
             {/* Vehicle display here */}
-
-            <div className="apartment-section">
+            <div className="background-section-car">
+            <div className="apartment-section" style={{ backgroundColor: "rgb(255, 230, 230,0.5)" }}>
                 <div className="header">
                     <h1>Vehicle Room</h1>
                 </div>
@@ -139,13 +141,7 @@ const Home = () => {
                     {renderVehicle()}
                 </div>
             </div>
-
-            <div className="">
-
-                <img src={room1} alt="" />
-
             </div>
-
             <section style={{ margin: "70px 0px" }}>
                 <div className="last-secction">
                     <h1>Latest news from our blog</h1>
@@ -227,6 +223,7 @@ const Home = () => {
                     </Card>
                 </div>
             </section>
+
         </section>
     );
 };
