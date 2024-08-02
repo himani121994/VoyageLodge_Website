@@ -9,6 +9,8 @@ import AllRooms from './Dashboard/DashComponent/AllRooms';
 import AllVehicle from './Dashboard/DashComponent/AllVehicle';
 import DashCarousels from './Dashboard/DashComponent/Carousels';
 import About from './Component/About';
+import Contact from './Component/Contact';
+
 
 const App =()=>{
   return(
@@ -17,6 +19,7 @@ const App =()=>{
      <Route path='/' element={<Layout />}>
      <Route path='/home' element={<Home />}/>
      <Route path='/about' element={<About />}/>
+     <Route path='/contact' element={<Contact />}/>
      </Route>
 
      <Route path='/admin' element={<AdminHome />}>
