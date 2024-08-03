@@ -1,51 +1,70 @@
-.main-nav-div{
+.main-nav-div {
     background-color: rgb(245, 148, 164);
     display: flex;
     height: 100px;
+    position: relative; /* Make main-nav-div relative for absolute positioning */
 }
-.logo-div{
-   padding: 10px;
-   display: flex;
+
+.logo-div {
+    padding: 10px;
+    display: flex;
 }
-.logo-img{
+
+.logo-img {
     width: 100px;
     border-radius: 50%;
 }
-.logo-span{
+
+.logo-span {
     position: relative;
     top: -61px;
-    /* background-color: white; */
-    /* border-radius: 50%; */
     font-size: 26px;
     margin-left: 66px;
     color: black;
     text-decoration: underline;
 }
-.logo-div h3{
+
+.logo-div h3 {
     margin-top: 41px;
     margin-left: -93px;
     font-size: 24px;
 }
-/* serach div ====== */
-.search-div{
+
+/* Search div */
+.search-div {
     position: relative;
     top: 20px;
     left: 300px;
 }
-.search-div .search-topnav-input{
+
+.search-div .search-topnav-input {
     width: 500px;
     height: 50px;
     border-radius: 50px;
     padding-right: 100px;
 }
-.search-div button{
-    /* position: absolute;
-    top: 1px; */
+
+.search-div button {
     background-color: rgb(206, 118, 132);
     width: 100px;
     height: 51px;
-    border-radius: 0px 50px 50px 0px;;
+    border-radius: 0px 50px 50px 0px;
     margin-left: -100px;
     border: none;
+    color: white;
+}
+
+/* User div */
+.user-div {
+    position: absolute;
+    top: 50%; /* Vertically center the icon */
+    right: 20px; /* Adjust the distance from the right edge */
+    transform: translateY(-50%); /* Vertically center the icon */
+}
+
+.user {
+    font-size: 30px;
+    margin: 0; 
+    margin-left: -60px;
     color: white;
 }
