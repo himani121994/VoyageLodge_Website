@@ -12,11 +12,21 @@ const Topnav =()=>{
                     <a href="#" style={{textDecoration:"none"}}><img src={logo} alt="logo" className="logo-img"/>
                     <span className="logo-span" >VoyageLodge</span></a>
                     <h3>HOTEL</h3>
-                    
                 </div>
-                <div>
-
+                
+                <div className="search-div">
+                    <input
+                        className="search-topnav-input"
+                        type="text"
+                        placeholder="Search..."
+                        // value={searchQuery}
+                        // onChange={(e) => setSearchQuery(e.target.value)}
+                        // onKeyPress={handleKeyPress} 
+                    />
+                    {/* <button onClick={handleSearch}>Search</button> */}
+                    <button >Search</button>
                 </div>
+                
             </div>
         </nav>
     )
