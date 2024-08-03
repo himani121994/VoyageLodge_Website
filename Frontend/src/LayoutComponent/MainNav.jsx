@@ -1,9 +1,11 @@
 import { Link } from "react-router-dom";
 import "./mainnav.css";
+import Topnav from "./Topnav";
 
 const Navbar = () => {
   return (
     <>
+    <Topnav/>
       <nav className="navbar">
         <div className="container">
           <div className="navbar-content">
