@@ -2,8 +2,14 @@ import React from "react";
 import "./topnav.css";
 import logo from "../assets/img/logo.avif"
 import { FaRegUser } from "react-icons/fa";
+import { useNavigate } from 'react-router-dom';
 
 const Topnav = () => {
+   const DeshNav = useNavigate()
+
+    const UserLoginFrom = ()=>{
+        DeshNav("/userlogin");
+    }
     return (
         <nav>
             <div className="main-nav-div">
@@ -23,7 +29,8 @@ const Topnav = () => {
                     <button>Search</button>
                 </div>
                 <div className="user-div">
-                    <FaRegUser className="user" />
+                    <FaRegUser className="user" onClick={UserLoginFrom}  />
+
                 </div>
             </div>
         </nav>

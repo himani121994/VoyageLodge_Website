@@ -10,6 +10,7 @@ import AllVehicle from './Dashboard/DashComponent/AllVehicle';
 import DashCarousels from './Dashboard/DashComponent/Carousels';
 import About from './Component/About';
 import Contact from './Component/Contact';
+import UserLogin from './Credentials/UserLogin';
 
 
 const App =()=>{
@@ -20,6 +21,7 @@ const App =()=>{
      <Route path='/home' element={<Home />}/>
      <Route path='/about' element={<About />}/>
      <Route path='/contact' element={<Contact />}/>
+     <Route path='/userlogin' element={<UserLogin/>}/>
      </Route>
 
      <Route path='/admin' element={<AdminHome />}>
