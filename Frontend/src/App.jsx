@@ -11,6 +11,7 @@ import DashCarousels from './Dashboard/DashComponent/Carousels';
 import About from './Component/About';
 import Contact from './Component/Contact';
 import UserLogin from './Credentials/UserLogin';
+import UserSighup from './Credentials/UserSighup';
 
 
 const App =()=>{
@@ -22,6 +23,7 @@ const App =()=>{
      <Route path='/about' element={<About />}/>
      <Route path='/contact' element={<Contact />}/>
      <Route path='/userlogin' element={<UserLogin/>}/>
+     <Route path='/sighup' element={<UserSighup/>}/>
      </Route>
 
      <Route path='/admin' element={<AdminHome />}>
