@@ -9,4 +9,4 @@ const UserSchema = mongoose.Schema({
     pass:String
 })
 
-module.exports = mongoose.model("admin",UserSchema);
+module.exports = mongoose.model("User",UserSchema);

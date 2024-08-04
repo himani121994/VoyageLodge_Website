@@ -10,7 +10,7 @@ const UserSighup = ()=>{
     }
 
     const SubmitLogin = ()=>{
-      let url = "http://localhost:8000/api/userlogin";
+      let url = "http://localhost:8000/api/usersighup";
       axios.post(url,input).then((res)=>{
         setInput(res.data)
       })

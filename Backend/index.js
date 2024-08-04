@@ -5,6 +5,7 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const adminRouter = require('./Routers/Admin.routers');
 const userRouter = require('./Routers/User.routers');
+const Credential = require('./Routers/Credential')
 const mongoose = require('mongoose');
 require('dotenv').config();
 
@@ -17,7 +18,7 @@ app.use(cors());
 
 // Serve static files from the 'uploads' directory
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
-
+app.use('/api', Credential);
 app.use('/dashboard', adminRouter);
 app.use('/home', userRouter);
 
