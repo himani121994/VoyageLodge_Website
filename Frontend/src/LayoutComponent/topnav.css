@@ -57,9 +57,9 @@
 /* User div */
 .user-div {
     position: absolute;
-    top: 50%; /* Vertically center the icon */
-    right: 20px; /* Adjust the distance from the right edge */
-    transform: translateY(-50%); /* Vertically center the icon */
+    top: 50%; 
+    right: 20px; 
+    transform: translateY(-50%); 
 }
 
 .user {
