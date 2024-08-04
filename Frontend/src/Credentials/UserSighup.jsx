@@ -1,8 +1,6 @@
 import  {useState,useEffect} from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
-const UserLogin = ()=>{
-    const NavSigh = useNavigate()
+const UserSighup = ()=>{
     const [input,setInput] = useState({});
 
     const OnchangeInput =(e)=>{
@@ -17,22 +15,22 @@ const UserLogin = ()=>{
         setInput(res.data)
       })
     }
-    
-    const ClickSingup =()=>{
-        NavSigh("/sighup")
-    }
-
     return(
         <>
         <form action="">
+            <label htmlFor="">firstname</label>
+            <input type="text" name="firstname" />
+            <label htmlFor="">lastname</label>
+            <input type="text" name="lastname" />
+            <label htmlFor="">Mobile number</label>
+            <input type="text" name="phone" />
             <label htmlFor="">User Email </label>
-            <input type="text" name="email" onChange={OnchangeInput}/>
+            <input type="text" name="username" onChange={OnchangeInput}/>
             <label htmlFor="">Password</label>
             <input type="text" name="password" onChange={OnchangeInput}/>
             <button onClick={SubmitLogin}>submit</button>
         </form>
-        <button onClick={ClickSingup}>Sigh Up</button>
         </>
     )
 }
-export default UserLogin;
+export default UserSighup;
