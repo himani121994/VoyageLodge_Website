@@ -13,6 +13,10 @@ const UserSighup = async (req,res)=>{
   
 }
 
+const userlogin = async(req,res)=>{
+  const {email,pass} = req.body;
+  
+}
 module.exports = {
-    UserSighup
+    UserSighup,userlogin
 }

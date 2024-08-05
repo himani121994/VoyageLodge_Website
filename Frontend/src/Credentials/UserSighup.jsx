@@ -19,11 +19,11 @@ const UserSighup = ()=>{
         <>
         <form action="">
             <label htmlFor="">firstname</label>
-            <input type="text" name="firstname" />
+            <input type="text" name="firstname" onChange={OnchangeInput}/>
             <label htmlFor="">lastname</label>
-            <input type="text" name="lastname" />
+            <input type="text" name="lastname" onChange={OnchangeInput}/>
             <label htmlFor="">Mobile number</label>
-            <input type="text" name="phone" />
+            <input type="text" name="phone" onChange={OnchangeInput}/>
             <label htmlFor="">User Email </label>
             <input type="text" name="username" onChange={OnchangeInput}/>
             <label htmlFor="">Password</label>
