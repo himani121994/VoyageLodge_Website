@@ -15,7 +15,10 @@ const UserLogin = ()=>{
       let url = "http://localhost:8000/api/userlogin";
       axios.post(url,input).then((res)=>{
         setInput(res.data)
+        console.log(res.data)
+        NavSigh("/home");
       })
+     
     }
     
     const ClickSingup =()=>{
@@ -26,10 +29,10 @@ const UserLogin = ()=>{
         <>
         <form action="">
             <label htmlFor="">User Email </label>
-            <input type="text" name="email" onChange={OnchangeInput}/>
+            <input type="text" name="gmail" onChange={OnchangeInput}/>
             <label htmlFor="">Password</label>
             <input type="text" name="password" onChange={OnchangeInput}/>
-            <button onClick={SubmitLogin}>submit</button>
+            <button onClick={SubmitLogin}>Login</button>
         </form>
         <button onClick={ClickSingup}>Sigh Up</button>
         </>
