@@ -14,8 +14,24 @@ const UserSighup = async (req,res)=>{
 }
 
 const userlogin = async(req,res)=>{
-  const {email,pass} = req.body;
-  
+  const {gmail,pass} = req.body;
+  try{
+     const useremail = await UserModel.findOne({gmail:gmail});
+     if(!useremail){
+        return res.status(401).json({message:"Invalid credentials"});
+     }
+    //  const passwordMatch = await UserModel.findOne(pass, user.password);
+    //     if (!passwordMatch) {
+    //         return res.status(401).json({ message: 'Invalid credentials' });
+    //     }
+
+    //  }
+    res.status(200).json({ success: true});
+    
+  } catch(error){
+    console.error(error);
+    res.status(500).json({ message: 'Internal server error' });
+  }
 }
 module.exports = {
     UserSighup,userlogin
