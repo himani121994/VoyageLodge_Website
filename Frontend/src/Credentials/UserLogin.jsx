@@ -1,6 +1,8 @@
 import  {useState,useEffect} from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import "./userlogin.css";
+
 const UserLogin = ()=>{
     const NavSigh = useNavigate()
     const [input,setInput] = useState({});
@@ -26,16 +28,20 @@ const UserLogin = ()=>{
     }
 
     return(
-        <>
+        <div className="mani_userlogin_div">
         <form action="">
+            <div className="input-div">
             <label htmlFor="">User Email </label>
-            <input type="text" name="gmail" onChange={OnchangeInput}/>
+            <input className="form_input" type="text" name="gmail" onChange={OnchangeInput}/>
+            </div>
+            <div className="input-div">
             <label htmlFor="">Password</label>
             <input type="text" name="password" onChange={OnchangeInput}/>
+            </div>
             <button onClick={SubmitLogin}>Login</button>
         </form>
         <button onClick={ClickSingup}>Sigh Up</button>
-        </>
+        </div>
     )
 }
 export default UserLogin;

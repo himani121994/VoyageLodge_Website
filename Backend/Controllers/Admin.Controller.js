@@ -28,9 +28,10 @@ const uploadHome = multer({ storage: storagehome });
 const addCarousel = async (req, res) => {
   try {
     let { hadding, description } = req.body;
-    let image = req.file ? req.file.path.replace('C:\\Intership Project\\VoyageLodge_Website\\Backend\\uploads\\', '') : null; // Remove the absolute path part
-    console.log(hadding, description, image);
-    const home = new HomeModel({ hadding, description, img: image });
+    let image = req.file ? req.file.path.replace(/\\/g, '/') : null; // Convert backslashes to slashes
+    let relativeImagePath = image ? image.replace(/.*uploads\//, '') : null; // Remove the 'uploads/' prefix
+    console.log(hadding, description, relativeImagePath);
+    const home = new HomeModel({ hadding, description, img: relativeImagePath });
     const savehome = await home.save();
     res.status(201).json(savehome);
   } catch (error) {
@@ -38,8 +39,6 @@ const addCarousel = async (req, res) => {
     res.status(500).send("Error saving data: " + error.message);
   }
 };
-
-
 
 
 //=======Room Upload Method========
