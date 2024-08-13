@@ -31,12 +31,12 @@ const UserLogin = ()=>{
         <div className="mani_userlogin_div">
         <form action="">
             <div className="input-div">
-            <label htmlFor="">User Email </label>
-            <input className="form_input" type="text" name="gmail" onChange={OnchangeInput}/>
+            <label htmlFor="">User Email 
+            <input className="form_input" type="text" name="gmail" onChange={OnchangeInput}/></label>
             </div>
             <div className="input-div">
-            <label htmlFor="">Password</label>
-            <input type="text" name="password" onChange={OnchangeInput}/>
+            <label htmlFor="">Password
+            <input className="form_input" type="text" name="password" onChange={OnchangeInput}/></label>
             </div>
             <button onClick={SubmitLogin}>Login</button>
         </form>
